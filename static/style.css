@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#title{
+    text-align: center;
+    font-family: sans-serif;
+    color: green;
+}
+
+.form-box{
+    display: flex;
+    
+}
+.container{
+    color: red;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}

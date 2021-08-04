@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <h1 id="title">IoT based Smart Home Security System usng RPi 3B+</h1>
+    <header>
+        <form action="" method="post" class="form-box">
+            <div class="container">
+                <label for="name">User Name</label>
+                <input id="name" name="name" type="text">
+
+                <label for="email">Email ID</label>
+                <input name = "email" type="text" id="email">
+
+                <label for="number">Contact Number</label>
+                <input type="text" id="number" name="number">
+                <label for="password">Password</label>
+                <input name="password" type="password" id="password">
+                <label for="password-repeat">Confirm Password</label>
+                <input type="password" name="password-repeat" id="password-repeat">
+
+
+                <button type="submit">Add User</button>
+            </div>
+
+        </form>
+    </header>
+    
+</body>
+</html>
