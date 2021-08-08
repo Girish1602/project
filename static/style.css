@@ -37,7 +37,19 @@ h1{
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
+  margin-top: 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid white;
+  border-radius: 5px;
+  background-color: white;
+}
+.container a{
+  color: red;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 20px;
 }
 
 #contact input[type="text"],
