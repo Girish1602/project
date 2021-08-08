@@ -8,28 +8,64 @@
     <title>Project</title>
 </head>
 <body>
-    <h1 id="title">IoT based Smart Home Security System usng RPi 3B+</h1>
-    <header>
+    <h1 align="middle"id="title">IoT based Smart Home Security System usng RPi 3B+</h1>
+    <div class="msg">
+        {%with messages =get_flashed_messages()%}
+        {%if messages%}
+        {% for msg in messages %}
+            <p align="middle">{{msg}}</p>
+        {% endfor %}
+        {%endif%}
+        {% endwith%}
+    </div>
+    <!-- <header>
+       
+        
         <form action="" method="post" class="form-box">
             <div class="container">
                 <label for="name">User Name</label>
-                <input id="name" name="name" type="text">
+                <input id="name" name="name" type="text" required>
 
                 <label for="email">Email ID</label>
-                <input name = "email" type="text" id="email">
+                <input name = "email" type="text" id="email" required>
 
                 <label for="number">Contact Number</label>
-                <input type="text" id="number" name="number">
+                <input type="text" id="number" name="number" required>
                 <label for="password">Password</label>
-                <input name="password" type="password" id="password">
+                <input name="password" type="password" id="password" required>
                 <label for="password-repeat">Confirm Password</label>
-                <input type="password" name="password-repeat" id="password-repeat">
+                <input type="password" name="password-repeat" id="password-repeat" required>
 
 
                 <button type="submit">Add User</button>
             </div>
 
-        </form>
+        </form> -->
+
+        <div class="container">  
+            <form id="contact" action="" method="post">
+              <h3>Add New User</h3>
+              
+              <fieldset>
+                <input name="name"placeholder="User Name" type="text" tabindex="1" required autofocus>
+              </fieldset>
+              <fieldset>
+                <input name="email" placeholder="Email Address" type="email" tabindex="2" required>
+              </fieldset>
+              <fieldset>
+                <input name="number" placeholder="Phone Number" type="tel" tabindex="3" required>
+              </fieldset>
+              <fieldset>
+                <input name="password" placeholder="Password" type="password" tabindex="3" required>
+              </fieldset>
+              <fieldset>
+                <input name="password-repeat" placeholder="Confirm Password" type="password" tabindex="3" required>
+              </fieldset>
+              <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+              </fieldset>
+            </form>
+          </div>
     </header>
     
 </body>

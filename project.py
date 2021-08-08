@@ -36,7 +36,7 @@ def adduser():
         found_user = users.query.filter_by(mail_id = email).first()
         if found_user:
             flash("this email is already registred")
-            return render_template("home.html")
+            return render_template("adduser.html")
         else:
             if pass1 == pass2 :
                 usr = users(Username=name,mail_id = email,password= pass1, contact_num=num)
@@ -45,7 +45,7 @@ def adduser():
                 session.permanent = True
                 session["name"]=name
                 session["mail_id"]= email
-                return render_template("home.html")
+                return render_template("adduser.html")
             else:
                 flash("passwords do not match")
                 return render_template("adduser.html")
