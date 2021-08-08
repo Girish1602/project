@@ -45,16 +45,34 @@ def adduser():
                 session.permanent = True
                 session["name"]=name
                 session["mail_id"]= email
-                return render_template("adduser.html")
+                return render_template("user.html",name=name)
             else:
                 flash("passwords do not match")
                 return render_template("adduser.html")
     return render_template("adduser.html")
 
 
-@app.route('/login')
+@app.route("/login", methods=[ "POST","GET" ] )
 def login():
-    pass
+    if request.method == "POST":
+        email = request.form["email"]
+        psw = request.form["password"]
+        user = users.query.filter_by(mail_id = email).first()
+        if user:
+            psw_temp = user.password
+            if psw == psw_temp:
+                session["user"] = user.Username
+                return render_template("user.html",name=user.Username)
+            else:
+                flash("incorrect password!")
+                return render_template("login.html")
+        else:
+            flash("email not found!")
+            return render_template("login.html")
+    else:
+        if "user" in session:
+            return redirect(url_for("user"))
+        return render_template("login.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
